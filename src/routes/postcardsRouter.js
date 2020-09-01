@@ -1,8 +1,10 @@
 const express = require('express');
 const postcardController = require('../controllers/postcardController');
+const adminController = require('../controllers/adminController');
 
 module.exports = function router(Postcard) {
   const controller = postcardController(Postcard);
+  const controllerAdmin = adminController(Postcard);
 
   const postcardsRouter = express.Router();
 
@@ -42,5 +44,7 @@ module.exports = function router(Postcard) {
         return res.sendStatus(204);
       });
     });
+  postcardsRouter.route('/admin')
+    .get(controllerAdmin.get);
   return postcardsRouter;
 };

@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const db = mongoose.connect('mongodb://localhost/postcardsAPI2');
+const db = mongoose.connect('mongodb+srv://admin:admin@cluster0.dvgtn.mongodb.net/library?retryWrites=true&w=majority');
 const Postcard = require('./src/models/postcardModel');
 
 const postcardsRouter = require('./src/routes/postcardsRouter')(Postcard);

@@ -2,7 +2,7 @@ module.exports = function postcardsController(Postcard) {
   function post(req, res) {
     const postcard = new Postcard(req.body);
     postcard.save();
-    return res.json(postcard).sendStatus(201);
+    return res.sendStatus(201);
   }
   function get(req, res) {
     const query = {};

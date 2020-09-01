@@ -11,4 +11,4 @@ const postcardModel = new Schema(
   },
 );
 
-module.exports = mongoose.model('Postcard', postcardModel);
+module.exports = mongoose.model('Postcard', postcardModel, 'postcards');
